@@ -28,7 +28,7 @@ end
 
 end
 
-voter = Voter.new('Leo', 'Garcia', 'Leo Garcia', 'Demócrata')
+voter = Voter.new('Berie', 'Sanders', 'Bernie Sanders', 'Democrat')
 
 puts voter.name
 puts voter.last_name
