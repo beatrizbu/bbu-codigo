@@ -1,0 +1,52 @@
+class Person
+    attr_accessor :name, :last_name, :full_name, :type
+
+    def initialize(name, last_name, full_name, type)
+      @name = name
+      @last_name = last_name
+      @full_name = full_name
+      @type = type
+    end
+      def full_name
+        [@name, @last_name].join
+      end
+
+end
+  person = Person.new('Joe', 'Biden', 'Joe Biden', 'Politician')
+  puts person.full_name
+  puts person.name
+  puts person.last_name
+  puts person.type
+
+
+ class Voter < Person
+  attr_reader :affiliation
+  def initialize(name, last_name, full_name, affiliation)
+    super
+    @affiliation = affiliation
+  end
+
+end
+
+voter = Voter.new('Leo', 'Garcia', 'Leo Garcia', 'Demócrata')
+
+puts voter.name
+puts voter.last_name
+puts voter.full_name
+puts voter.affiliation
+
+
+class Politician < Voter
+ attr_reader :party
+ def initialize(name, last_name, full_name, party)
+   super
+   @party = party
+ end
+
+end
+politician = Politician.new('Hillary', 'Clinton', 'Hilary Clinton', 'Democratic Party')
+
+puts politician.name
+puts politician.last_name
+puts politician.full_name
+puts politician.affiliation
